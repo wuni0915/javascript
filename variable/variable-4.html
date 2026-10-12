@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수4</title>
+</head>
+<body>
+    <script>
+        let now = new Date()
+        // 내장 객체/ 내장에 이미 생성된 데이터를 쓰는것.
+        console.log(now)
+        let display = now.toDateString()
+        console.log(display)
+        // let display = now. 이 문법은 now안에 (.) 있는걸 끄집어 낸다.
+        document.write(`<p>오늘 날짜는${display}</p>`)
+        let displayTime = now.toLocaleTimeString()
+        document.write(`<p>현재 시간은${displayTime}</p>`)
+        // console.log()
+    </script>
+</body>
+</html>

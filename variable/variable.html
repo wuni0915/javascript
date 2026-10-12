@@ -6,6 +6,31 @@
     <title>변수 1</title>
 </head>
 <body>
-    
+ 
+    <script>
+    //변수 공부
+    //원래는 변수 예약어로 var를 사용했지만 지금은 let, const를 사용한다. const는 제약이 많아 오류 생기는걸 막는다.
+    //변수: 데이터를 담는 상자
+    //변수 선언(변수를 담겠다)과 할당이 있다. 
+    let name = "최원희"
+    console.log(name);
+    // console.log(name); 는 확인용으로 값이 잘 담겼는지 확인하기 위함이다. 
+    name = "김길동"
+    console.log(name);
+    // let은 변수에 재할당이 가능하다 const는 안됨
+    // let name = "이원희"
+    const age = 25;
+    // age = 30;
+    // const age = 40;
+    // let과 const는 같은 변수명(age, name 등)으로 선언 할 수 없다. 재할당에 관해서는 let 가능, const 불가
+    console.log(age);
+    // 오류가 뜬다.
+
+    let username = prompt("이름을 입력하세요", "최원희")
+    // 이름을 입력하고 확인을 누르니까 console에 들어간다. 사용자가 입력하는 값에 따라 유저네임이 바뀐다.
+    console.log(username);
+    document.write(`    <h1> 이름 : ${username}</h1>
+    <p>나이 : ${age}</p>`)
+    </script>
 </body>
 </html>
