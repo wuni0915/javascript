@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <!-- 로그인 상태 변경 -->
+     <button id="loginBtn">로그인</button>
+     <p id="text">로그아웃 상태</p>
+     <button id="likeBtn">🤍좋아요</button>
+     <script>
+        //로그인 상태 변경
+        const btn = document.querySelector("#loginBtn");
+        // console.log(btn); 확인 완료
+        const text = document.querySelector("#text");
+        // console.log("text");확인 완료
+        //로그인 상태
+        let isLogin = false;
+        // 로그인 상태 변경 함수
+        btn.addEventListener("click", function(){
+            // console.log("click") 작동 하는것 확인 완료
+            if(isLogin){
+                //로그인 상태 > 로그아웃 상태로 변경
+                isLogin=false;
+                text.textContent = "로그아웃 상태";
+                btn.textContent = "로그인";
+            }else{
+                // 로그아웃 상태 > 로그인 상태로 변경
+                isLogin = true;
+                text.textContent = "로그인 상태";
+                btn.textContent = "로그아웃";
+            }
+        });
+        //순서는 변수선언 > 적용문 이지만/ if절 안에서는 현재 상태를 중심으로 작동한다.
+
+        // ===========================좋아요 버튼
+
+        const likeBtn =document.querySelector("#likeBtn");
+        let isLike = false;
+        // likeBtn.addEventListener("clisk", function(){});
+        likeBtn.addEventListener("click", ()=>{
+            // 화살표 함수
+            isLike = !isLike //상태 토글 = ! = !fales > = true
+            // console.log(isLike);
+            if(isLike){
+                likeBtn.textContent = `💖좋아요`;
+            }else{
+                likeBtn.textContent = `🤍좋아요`;
+            }
+            // 상태 토글을 시켜놔서 누를때마다 true, false 가 바뀌어서 if문이 적용된다.
+        });
+     </script>
+</body>
+</html>

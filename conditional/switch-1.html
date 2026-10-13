@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // switch(조건){
+        //     case 값1 : 명령 1;
+        //     break
+        //     case 값2 : 명령 2;
+        //     break
+        //     case 값3 : 명령 3;
+        //     break
+        //     .........
+        //     default : 명령 n;
+        // }
+        // case가 맞으면 값대로 하는거고 아니면 break 대로 간다. 조건에 맞으면 break 빠져나간다.
+        let score = prompt("점수를 입력하세요");
+        // console.log(score); 사용자가 입력한 값이 스코어에 입력 된다.
+        let grade;
+        // 변수 선언만 한 상태.
+        switch(true){
+            case score >= 90 :
+                grade = "A학점";
+            break;
+            case score >= 80 :
+                grade = "B학점";
+            break;
+            case score >= 70 :
+                grade = "C학점";
+            break;
+            case score >= 60 :
+                grade = "D학점";
+            break;
+            default : grade = "F학점"
+
+        }
+        document.write(`당신의 학점은 ${grade}입니다.`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <!-- 버튼을 누르면 횟수가 증가할거다 -->
+    <button id="btn">클릭 +</button>
+    <p class="counter"> 클릭 횟수 : 0</p>
+    <!-- 이벤트라는것 중에 클릭을 할 거다. -->
+     <script>
+        let clickBtn = document.querySelector("#btn")
+        // 쿼리셀렉터는 자바스크립트의 선택자같은 느낌이다
+        console.log(clickBtn)
+        //console에 html같이 줄 하나가 잡힌다.
+        //클릭횟수 담기
+        let counter = document.querySelector(".counter")
+        console.log(counter);
+        let count = 0;
+        clickBtn.addEventListener("click" , function(){
+            // console.log("클릭완료"); 확인됨
+            // console.log(count);
+            count++
+            console.log(count);
+            // 당장 콘솔에 안뜨는 이유는 클릭하면 이라는 펑션 안에 있기때문
+            counter.textContent = `클릭 횟수 : ${count}`;
+            // p태그 안에 (.) 텍스트 속성 (클릭 횟수) 는 자바스크립트기능이다.
+        })
+        // 문법이다. ("이벤트명", 함수-function(){내가 넣을 기능})
+     </script>
+</body>
+</html>
