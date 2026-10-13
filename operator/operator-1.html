@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <script>
+    // <!-- 계산하거나 비교할때 쓰는 기호 -->
+    // <!-- 산술 연산자(계산 할 때) -->
+    let a = 10;
+    let b = 3;
+    console.log(a + b);
+    console.log(a - b);
+    console.log(a * b);
+    console.log(a / b); // 나누기
+    console.log(a % b); //나머지 값
+    // <!-- 비교 연산자(참인지 아닌지 확인) -->
+    console.log(5 > 3); //true
+    console.log(5 < 3); //false
+    console.log(5 == 3); // ⭐ 이코르는 = 가 아닌 == 이다, false
+    console.log(5 == "5"); // ⭐ 뭐든 5는 같으니까, 하나라도 같으니까?, true
+    console.log(5 === "5"); // ⭐ 모든 속성까지 전부 다 완전히 같은지 확인한다, false
+    console.log( 5 != 3); //부정을 뜻한다. 5와 3은 같지 않다 true
+    // <!-- 논리 연산자(조건이 여러개일때) -->
+    let age = 20;
+    console.log( age > 18 && age < 30); // &&== 그리고, 18보다 크고 30보다 작다. true
+    console.log( age > 18 && age < 20); //false, 둘다 성립이 되어야 true다.
+    console.log (age > 18 || age <20 ); //age가 18보다 크거나 20보다 작다. 하나만 맞아도 트루 
+    // ! 반대로 바꾸기
+    let isLogin = true
+    console.log (isLogin);
+    console.log (!isLogin); //false로 뜬다. ! 느낌표는 반대로 바꾼다.
+    // <!-- 증가/ 감소 연산자 -->
+    let count = 5
+    count++ // ++은 증가
+    console.log(count);
+    count-- //--는 감소
+    console.log(count); // 4가 아닌 5가 뜬다. 기존 count++로 6이 된 상태
+    </script>
+</body>
+</html>
