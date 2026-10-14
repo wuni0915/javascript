@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fruits = ["사과" , "바나나", "포도", "망고", "수박"];
+        console.log(fruits);
+        // 폴이치 각 요소 하나씩 꺼내 쓴다. 콘솔에서 행이 다르게 나온다
+        fruits.forEach((fru, index)=>{
+            console.log(fru);
+            console.log(index);
+            document.write(`<p>${index+1}:${fru}</p>`);
+        })
+        // fruits.forEach((매개변수)=>{})
+    </script>
+</body>
+</html>

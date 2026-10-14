@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 객체</title>
+</head>
+<body>
+    <script>
+        // Array 여러 데이터를 순서대로 관리
+        const arr = [1, 2, 3, 4];
+        console.log(arr)
+        // 1.lenght 속성
+        console.log(arr.length);
+        // 2.push() : 배열 끝 요소를 추가하는 메서드
+        arr.push("짜증");
+        console.log(arr)
+        // 3. pop() : 배열 끝 요소를 제거하는 메서드
+        arr.pop();
+        console.log(arr);
+        // 4.shift() : 배열 첫 요소 제거
+        arr.shift();
+        console.log(arr);
+        // 5.unshift() : 배열 앞에 요소 추가 메소드
+        arr.unshift("궁금");
+        console.log(arr);
+        // 6.indexOf() : 요소 위치 반환
+        console.log(arr.indexOf(3));
+        //  > 0, 1, 2 ~ 0으로 시작하는 순서로 찍힌다. 0, 1, 2~ 면 여기서 2가 나온다.
+        // 7.slice() : 배열 일부를 반환
+        // 7.slice( 시작 인덱스(포함), 끝 인덱스 (미포함)) 
+        console.log(arr.slice(1, 4));
+        // console.log(arr.slice(인덱스 번호를 넣는다))
+        // 8. splice() : 배열 요소 추가/ 삭제
+        // splice(시작인덱스(어디서부터), 삭제갯수, 추가할값1, 추가할값2,....)
+        console.log(arr);
+        arr.splice(1,2,44,50,100, 200);
+        // '궁금', 2, 3, 4 > '궁금', 44,50, 100, [4] 2개 지우고 추가하고 남은 값 붙음.
+        console.log(arr)
+        // 9.join() : 배열을 문자열로 변환한다. 사이사이에 추가한다.
+        console.log(arr.join("**********"));
+        // 10.forEach() : 각 요소에 대해 함수 실행, 각
+        arr.forEach((a)=>{
+            console.log(a);
+            document.write(`<p>${a}</P>`);
+        })
+    </script>
+</body>
+</html>

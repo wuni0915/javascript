@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색 변경</title>
+</head>
+<body>
+    <button class="btn">색변경</button>
+    <script>
+        const btn = document.querySelector(".btn");
+        btn.addEventListener("click", ()=>{
+            // console.log("click");
+            //rgb(255, 255, 255) rgb(0,0,0)
+            // const r = Math.random() * 256 ;
+            const r = Math.floor(Math.random() * 256) ;
+            console.log(r);
+            const g = Math.floor(Math.random() * 256) ;
+            console.log(g);
+            const b = Math.floor(Math.random() * 256) ;
+            console.log(b);
+            const bgColor = `rgb(${r}, ${g}, ${b})`;
+            console.log(bgColor);
+            document.body.style.backgroundColor = bgColor;
+            // 바디라는 태그 안에 스타일 속성에서 백그라운드 컬러로 bgColor를할당하겠다.
+        });
+    </script>
+</body>
+</html>

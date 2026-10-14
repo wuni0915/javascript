@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="fruitList">
+        <!-- <li>1.사과</li>
+        <li>2.사과</li>
+        <li>3.사과</li>
+        <li>4.사과</li>
+        <li>5.사과</li> -->
+    </ul>
+    <!-- js출력 -->
+     <script>
+        // 더미 데이터
+        const list = document.querySelector("#fruitList")
+        const fruits = ["사과", "바나나", "포도", "망고", "수박"];
+        console.log(fruits);
+        fruits.forEach((item, index)=>{
+            console.log(item, index);
+            list.innerHTML += `<li>${item}.${index+1}</li>`
+            // += == 배열 안 item 갯수 만큼
+        });
+
+
+     </script>
+</body>
+</html>
