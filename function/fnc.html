@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수</title>
+  </head>
+  <body>
+    <script>
+      //함수: 동작해야 할 기능을 묶은 명령어
+      //alert() 자바스크립트에 포함되어 있는 여러 함수 중 하나이다 => 내장 함수
+      //내가 만드는 함수
+      //두 수를 더하는 함수
+      function addNum(a, b, c) {
+        console.log("함수 호출"); // 이름을 한번 호출해줘야 찍힌다.
+        let sum = a + b - c;
+        document.write(`${sum} <br>`);
+        // 이거는 addNum()의 기능만 만들어둔거지 뭘 한게 아니다. 뜨게 하려면 밑에 호출해줘야한다.
+      }
+      addNum(1, 10, 30); //인수: 함수 호출 할 때 전달하는 실제 값
+      addNum(2, 20, 40);
+      addNum(3, 30, 20);
+      addNum(4, 40, 60);
+      // 내가 만드는 함수 : function 이름 짓기(매개변수){기능}
+      // 매개변수: 함수가 값을 전달하는 변수
+    </script>
+  </body>
+</html>

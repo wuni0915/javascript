@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button style="color: red;" onclick="sayHi()">클릭</button>
+    <!-- <button style="color: red;" onclick=""클릭이벤트다>클릭</button> -->
+     <!-- 내가 이 버튼을 클릭하면 세이 하이라는 함수가 실행 된다 -->
+      <button onclick="alert()">알림창 클릭</button>
+    <script>
+        function sayHi() {
+            console.log("안녕");
+        };
+        function greet(userName , age, gu){
+            console.log("확인");
+            // let userName =
+            document.write(`<br>${userName}님 ${age}살 ${gu}거주 <br>환영합니다`)
+        };
+        greet("최원희" ,20, "달서구") //값은 밖에서 넣고 기능에 전달한다, 밖에 값만 계속 바꾸면 된다.
+        greet("길떵", 20, "동구")
+    </script>
+</body>
+</html>

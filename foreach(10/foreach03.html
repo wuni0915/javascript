@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    ul {
+        display: flex;
+        gap: 30px;
+    }
+    li {
+        width: 200px;
+        background-color: antiquewhite;
+        list-style: none;
+    }
+    li img {
+        width: 90%;
+        padding: 10px;
+    }
+    
+  </style>
+  <body>
+    <ul id="productlist">
+      <!-- js출력 -->
+    </ul>
+    <script>
+      const proList = document.querySelector("#productlist");
+      // 스네이크?표기법 대문자는 카멜법
+      // 변수명 첫 글자는 소문자이며 숫자로 시작하지 않는다.
+      // console.log(proList)
+      // 더미 데이터 만들기-----------------
+      const products = [
+        {
+          name: "티셔츠",
+          price: 15000,
+          desc: "이쁜 티셔츠",
+          img: "images/tshirt.jpg",
+        },
+        {
+          name: "청바지",
+          price: 25000,
+          desc: "이쁜 청바지",
+          img: "images/jeans.jpg",
+        },
+        {
+          name: "운동화",
+          price: 45000,
+          desc: "이쁜 운동화",
+          img: "images/shoes.jpg",
+        },
+        // 객체가 3개있다
+      ];
+      // console.log(products);
+      products.forEach((item, index) => {
+        console.log(item, index);
+        console.log(item.name);
+        console.log(item.price);
+        console.log(item.desc);
+        //   console.log(products);
+        proList.innerHTML += `<li>
+       <img src="${item.img}" alt="${item.name}">
+            <h3>상품 이름: ${item.name}</h3>
+            <p>상품 설명: ${item.price}</p>
+            <p>상품 가격: ${item.desc}</p>
+         </li>`;
+      });
+      // foreach는 매개변수를 사용하여 접근한다
+      // 하나의 객체는 오브젝트이며
+      // innerHTML이건 속성 프로포티다
+    </script>
+  </body>
+</html>
