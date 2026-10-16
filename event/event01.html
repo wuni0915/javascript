@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event</title>
+  </head>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+
+    .box.active {
+        width: 500px;
+        height: 500px;
+        background-color: yellow;
+        border-radius: 50%;
+    }
+  </style>
+  <body>
+    <!-- 1.이벤트 연결 -->
+    <button id="btn">눌러보세요</button>
+    <!-- 2. 입력 이벤트 -->
+    <input type="text" id="inputName" placeholder="이름을 입력하세요" />
+    <!-- 3. form 제출 이벤트 -->
+    <form id="myForm">
+      <input id="userEmail" type="text" placeholder="이메일을 입력하세요." />
+      <button type="submit">제출</button>
+      <!-- <button type="submit">이타입의 버튼 자체가 제출 기능이다.</button> -->
+    </form>
+    <!-- 4. 마우스 이벤트 -->
+    <div class="box"></div>
+    <!-- 5. 키보드 이벤트 -->
+    <input type="text" id="keyInput" placeholder="아무 키나 눌러보세요" />
+
+    <script>
+      // 이벤트 연결
+      const btn = document.querySelector("#btn");
+      btn.addEventListener("click", () => {
+        // console.log("됨")
+        btn.style.color = "red";
+      });
+      // 2.입력 이벤트
+      const userName = document.querySelector("#inputName");
+      userName.addEventListener("input", () => {
+        console.log(userName.value);
+      });
+      // userName.addEventListener("input" 작성이라는 이벤트, ()=>{})
+      // console.log(userName.value); 인풋에 작성한게 콘솔에 뜬다.
+      // 3. form 제출 이벤트
+      const form = document.querySelector("#myForm");
+      const userEmail = document.querySelector("#userEmail");
+      form.addEventListener("submit", (event) => {
+        console.log(event);
+        event.preventDefault();
+        // 원래 탑재되어있는 행동(새로고침)을 막겠다라는것 번쩍거리지 않아짐
+        // w제출 하기도전에 새로고침돼서 사라진다.
+        // 값을 받아오는 매개변수는 이해 했는데 이 매개변수는 뭐지..?
+        console.log("폼이 제출되었습니다.");
+        console.log(userEmail.value);
+        document.write(`${userEmail.value}`);
+      });
+
+      // 4. 마우스 오버 이벤트
+
+      const box = document.querySelector(".box");
+      box.addEventListener("mouseover", () => {
+        box.style.backgroundColor = "orange";
+      });
+      box.addEventListener("mouseout", () => {
+        box.style.backgroundColor = "aquamarine";
+      });
+      //   box.addEventListener("mouseover" 마우스를 갖다대면, ()=>{} 이걸 한다)
+
+      // 5. 키보드 이벤트
+      const keyInput = document.querySelector("#keyInput");
+      keyInput.addEventListener("keydown", (e) => {
+        console.log(e);
+        // 키다운 > 엔터를 치면 내가 무엇을했는지 정보가 뜬다. 쉬프트 치면 쉬프트쳤다. 등 모든 정보가 뜸
+        console.log(e.key);
+        // 키값. 무슨 키를 쳤는지 나온다.
+        console.log(e.keyCode);
+        // 키보드의 번호가 나온다 13번 키를 찍음.
+      });
+      //   keyInput.addEventListener("keydown" , (e)=>{}) e라고만 해도 event를 알아듣는다
+
+      // 페이지 로드 이벤트
+      window.addEventListener("load", () => {
+        console.log("페이지 로딩 완료~");
+      });
+
+      // 화면(window) 리사이즈 이벤트
+      window.addEventListener("resize", () => {
+        //화면의 사이즈가 600px보다 크면
+        if(window.innerWidth < 600){
+            box.classList.add("active")
+        } else {
+            box.classList.remove("active")
+        }
+        // if(window.innerWidth 안에 있는 넓이)
+      });
+    //   console.log(window.innerWidth); 사이즈 값을 알 수 있다.
+
+    </script>
+  </body>
+</html>

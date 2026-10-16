@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contain {
+    width: 500px;
+    padding: 20px;
+    background-color: rgb(205, 220, 233);
+    margin: 100px auto;
+    position: relative;
+}
+
+.contain img {
+    width: 100%;
+    display: block;
+}
+
+.over {
+    padding: 10px;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.over:hover {
+    background-color: rgba(255, 255, 255, 0.795);
+    cursor: pointer;
+}
+.contain > .over {
+    position: absolute;
+    bottom: 30px;
+    /* left: 0; */
+    right: 30px;
+}
+/* 상세 설명보기 */
+.detail {
+    display: none;
+    background-color: cadetblue;
+    padding: 20px;
+}
+.detail p {
+    margin-bottom: 20px;
+}
+.detail .over {
+    /* 일반적인 숫자 값(margin: 10px)은 인라인 블록이어도 잘 들어가지만, margin-left: auto나 margin-right: auto처럼 auto를 써서 요소를 밀어내거나 정렬할 때는 블록 성격이 필수입니다. */
+    display: block;
+    margin-left: auto;
+}

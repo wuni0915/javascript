@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #b9b9b9;
+            margin-bottom: 20px;
+        }
+        .box1.active {
+            background-color: rgb(208, 225, 255);
+        }
+        .box2.active {
+            background-color: rgb(166, 167, 255);
+        }
+        .box3.active {
+            background-color: rgb(74, 71, 255);
+        }
+        .box4.active {
+            background-color: rgb(89, 59, 255);
+        }
+    </style>
+</head>
+<body>
+    <h1>key up event</h1>
+    <div class="box box1">box 1</div>
+    <div class="box box2">box 2</div>
+    <div class="box box3">box 3</div>
+    <div class="box box4">box 4</div>
+    <script>
+        document.addEventListener("keyup", (e)=>{
+            // e 매개변수이나 이미 값이 있는 매개변수(내장된거) 이렇게 이해하는게 더 쉬울듯...
+            console.log(e);
+            let keyB = e.key.toLowerCase()
+            console.log(keyB);
+            let box = null;
+            if(keyB === "enter") {
+                box = document.querySelector(".box1");
+                // 재할당했다.
+            } else if (keyB === "shift") {
+                box = document.querySelector(".box2");
+            } else if (keyB === "g"){
+                box = document.querySelector(".box3");
+            } else if (keyB === "c") {
+                box = document.querySelector(".box4")
+            }
+            if(box != null){
+                box.classList.add("active")
+            } 
+
+            //  if(){}else{} . if(){}else if(){}
+        })
+    </script>
+</body>
+</html>

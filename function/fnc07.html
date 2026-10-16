@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .submenu {
+        display: none;
+      }
+      .submenu.show {
+    /* <ul class="submenu active"> 라는게 생긴다.*/
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="menu">메뉴 1</button>
+    <ul class="submenu">
+      <li>서브 메뉴 1</li>
+      <li>서브 메뉴 2</li>
+    </ul>
+    <script>
+        const menu = document.querySelector(".menu")
+        const submenu = document.querySelector(".submenu")
+        menu.addEventListener("click", ()=>{
+            // submenu.classList.toggle("active")
+            if (submenu.classList.contains("show")){
+                submenu.classList.remove("show");
+
+            } else {
+                submenu.classList.add("show");
+            }
+        })
+    </script>
+  </body>
+</html>
