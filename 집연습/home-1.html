@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>집 연습 10/18일</title>
+</head>
+<body>
+    <button id="btn">클릭</button>
+    <p id="countP">클릭횟수 : 0</p>
+
+    <h2 id="clickCount">클릭 횟수 </h2>
+    <button id="increase">증가</button>
+    <button id="decrease">감소</button>
+    <script>
+        let btn = document.querySelector("#btn")
+        // console.log(btn)
+        let countP = document.querySelector("#countP")
+        // console.log(count)
+
+        let count = 0;
+        btn.addEventListener("click", ()=>{
+            count++
+            // console.log(count)
+            countP.textContent = `클릭횟수 : ${count}`
+        })
+        let clickCount = document.querySelector("#clickCount")
+        let inc = document.querySelector("#increase")
+        let dec = document.querySelector("#decrease")
+        let secCount = 0;
+
+        console.log(clickCount, inc, dec)
+
+        inc.addEventListener("click", function(){
+            // console.log("클릭")
+            secCount++
+            clickCount.textContent = `클릭 횟수 : ${secCount}`
+        })
+        dec.addEventListener("click", function(){
+            // console.log("클릭")
+            secCount--
+            clickCount.textContent = `클릭 횟수 : ${secCount}`
+        })
+    </script>
+</body>
+</html>

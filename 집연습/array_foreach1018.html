@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="proList">
+
+    </ul>
+    <script>
+      let products = [
+        { name: "키보드", price: 50000, stock: 3 },
+        { name: "마우스", price: 25000, stock: 0 },
+        { name: "모니터", price: 200000, stock: 5 },
+        { name: "헤드셋", price: 80000, stock: 2 },
+        { name: "스피커", price: 40000, stock: 0 },
+      ];
+
+      let proList = document.querySelector("#proList")
+      products.forEach((pro) => {
+        // console.log(pro)
+        // document.write(`${pro.name}`, `${pro.price}` , `${pro.stock}`)
+        let count = 0;
+        if(pro.stock === 0){
+            proList.innerHTML = ``
+        }else if(pro.stock >= 1){
+
+        }
+        
+        proList.innerHTML += `<li>상품명 : ${pro.name} / 가격 : ${pro.price}</li>`
+        // else {
+        //     proList.innerHTML += `<li>상품명 : ${pro.name} / 가격 : ${pro.price}</li>`
+        // } 
+        proList.innerHTML += `<p>재고가 있는 상품 수 : ${count}개</p>`
+      });
+    </script>
+  </body>
+</html>
