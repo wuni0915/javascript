@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom - 요소생성</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>웹 프로그래밍</h1>
+      <!-- p -->
+      <!-- js 생성 -->
+      <!-- 여기는 텍스트 노드 이다. -->
+    </div>
+    <div class="notice">
+      <!-- span안에 글자 안녕하세요 -->
+      <!-- <span>안녕하세요</span> -->
+    </div>
+    <script>
+      // 돔은 html전체라고 보면 된다
+      // p태그 생성
+      //   createElement("p"); 요소 생성 메서드
+      const newP = document.createElement("p");
+      // const newP = document.createElement()>돔에 새로운 요소를 만들어라
+      console.log(newP);
+      //   createTextNode() 글자 요소 생성 메서드
+      const txtNode = document.createTextNode(
+        "DOM은 document object model의 줄임말이다.",
+      );
+      console.log(txtNode);
+      //p태그에 글자를 넣는다.
+      newP.appendChild(txtNode);
+      //   appendChild()자식을 더 하는 메서드
+      console.log(newP);
+      //   container 영역안에 p태그 연결
+      document.querySelector("#container").appendChild(newP);
+      //   스팬태그 생성
+      const newSpan = document.createElement("span");
+      const textNode = document.createTextNode("안녕하세요");
+      newSpan.appendChild(textNode);
+      document.querySelector("#container").appendChild(newSpan);
+    </script>
+  </body>
+</html>

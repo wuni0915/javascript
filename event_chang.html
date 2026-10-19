@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .todo {
+        cursor: pointer;
+        font-weight: bold;
+
+    }
+    .todo.completed {
+        color: gray;
+        text-decoration: line-through;
+    }
+  </style>
+  <body>
+    <h2>오늘 할 일</h2>
+    <ul>
+      <!-- <li class="todo"><input type="checkbox" checked ⭐⭐ 체크가 되는 속성/>청소하기</li> -->
+      <li class="todo"><input type="checkbox" />청소하기</li>
+      <li class="todo"><input type="checkbox" />장보기</li>
+      <li class="todo"><input type="checkbox" />운동하기</li>
+      <li class="todo"><input type="checkbox" />자바스크립트 복습하기</li>
+    </ul>
+    <script>
+        // const todos = document.querySelector(".todo")
+        // 위에 처럼하면 하나만 잡힘. 쿼리셀렉터얼 해야됨
+        const todos = document.querySelectorAll(".todo")
+        console.log(todos)//nord list로 담겨 배열처럼 담긴다.
+        todos.forEach((todo, index)=>{
+            console.log(todo, index);
+            // 폴이치는 객체를 각각 꺼내온다. 담긴 값에 객체가 뭐뭐 있는지 보기.
+            const checkBox = todo.querySelector("input");
+            // 인풋 태그 가져오는법
+            console.log(checkBox);
+            checkBox.addEventListener("change", ()=>{
+                console.log("checBox.checked")
+                //콘솔로그로 체크드를 확인하면 true, false가 뜬다 체크가되면 트루
+                if(checkBox.checked){
+                    todo.classList.add("completed")
+                }else{
+                    todo.classList.remove("completed")
+                }
+            } )
+            // checkBox.addEventListener("change" > 체크됐는지 체인지가 됐다라면/ 상태 변화가 일어났다면. )
+        })
+        // 인덱스번호를 키로 인식한다. 콜백함수 ()=>{} index고유한 인덱스 키값
+    </script>
+  </body>
+</html>

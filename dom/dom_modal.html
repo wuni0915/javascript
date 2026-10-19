@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        /* 화면의 세로를 다 먹겠다 */
+        background-color: rgba(0, 0, 0, 0.5);
+        /* display: flex; */
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+      .modal-content {
+        background-color: #fff;
+        width: 300px;
+        /* margin: auto; 됨 */
+        border-radius: 20px;
+        padding: 30px;
+        position: relative;
+      }
+      .closeBtn {
+        position: absolute;
+        top: -26px;
+        right: 16px ;
+        color: #fff;
+        /* 부모 패딩은 싹 무시하네 */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 모달창 -->
+    <!-- 모달 열기 버튼 -->
+    <button class="openBtn">모달 열기</button>
+    <!-- 모달 창 -->
+    <div class="modal">
+      <div class="modal-content">
+        <span class="closeBtn">X</span>
+        <h2>모달창</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ducimus
+          doloribus sapiente veritatis odit dicta tenetur iste eveniet itaque
+          exercitationem aut harum nihil, quia ex eum ut nobis hic esse.
+        </p>
+      </div>
+    </div>
+    <script>
+        const openBtn = document.querySelector(".openBtn")
+        const modal = document.querySelector(".modal")
+        const closeBtn = document.querySelector(".closeBtn")
+        // 모달 열기
+
+        openBtn.addEventListener("click", ()=>{
+            modal.style.display = "flex";
+        })
+        //모달 닫기
+        closeBtn.addEventListener("click", ()=>{
+            modal.style.display = "none";
+        })
+        // 배경 클릭시 모달 닫기
+        modal.addEventListener("click", (e)=>{
+            console.log(e.target);
+            // event는 내가 한 이벤트에 대한 정보를 알려주는거라 봐도 될거같다.
+            
+            // e.target.style.display = "none";
+            // 내가 배경을 클릭했는지 모달을 클릭했는지 알려줌 이걸 확인하고 어디를 클릭해야 디스플레이 논을 할 지 알수 있다.
+            // if문을 쓰지 않고 그냥 클릭하면 오버레이 되어 모달창을 눌러도 사라진다
+            if(e.target === modal){
+                e.target.style.display = "none";
+                // 모달 본인만 클릭됨. 자식은 클릭 안됨. 속성이 완전 같다....
+            }
+        })
+    </script>
+  </body>
+</html>

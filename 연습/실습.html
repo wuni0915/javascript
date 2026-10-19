@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>장바구니</h2>
+
+    <ul id="cart">
+      <li>운동화 <button>삭제</button></li>
+      <li>모자 <button>삭제</button></li>
+      <li>가방 <button>삭제</button></li>
+    </ul>
+
+    <!-- 예제2 -->
+    <h2>좋아하는 과일을 선택하세요 🍎</h2>
+
+    <ul id="fruit">
+      <li>사과</li>
+      <li>바나나</li>
+      <li>딸기</li>
+    </ul>
+
+    <div id="result"></div>
+
+    <script>
+        // 예제1
+        const cart = document.getElementById("cart");
+        // getElementById()는 같은 ID가 여러 개 있어도 첫 번째 요소 하나만 가져와.
+        console.log(cart);
+        
+        cart.addEventListener("click", (e) => {
+            console.log(e.target);
+            
+            if (e.target.tagName === "BUTTON") {
+                e.target.parentElement.remove();
+            }
+        });
+        // 예제2
+
+        const fruit = document.getElementById("fruit")
+        const result = document.getElementById("result")
+
+        fruit.addEventListener("click", (e)=>{
+            // console.log("dd");
+            console.log(e);
+            result.innerHTML = `내가 선택한 과일은 ${e.target.innerText}입니다`
+            
+            // li가 아닌 빈 여백 ul을 클릭하면 변할수 있으니  if문 사용해주는게 좋다
+        })
+    </script>
+  </body>
+</html>
