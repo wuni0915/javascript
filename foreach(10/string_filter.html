@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품 검색</title>
+  </head>
+  <body>
+    <h2>상품 검색</h2>
+    <!-- 검색 창 -->
+    <input id="search" placeholder="상품 이름을 입력하세요" />
+    <!-- 검색 결과 -->
+    <ul id="productList">
+      <!-- js출력 -->
+    </ul>
+    <script>
+      // 상품 데이터
+      const products = ["티셔츠", "청바지", "운동화", "모자", "원피스"];
+      const search = document.querySelector("#search");
+      const productList = document.querySelector("#productList");
+
+      // 상품 출력 함수
+      function showProductList(items) {
+        productList.innerHTML = ""
+        // 초기화임
+        // products 를 가져온다
+        console.log(items);
+        items.forEach((product) => {
+          console.log(product);
+          // products에서 폴이치한 문자열(객체가 아님) 하나씩 가져온다.
+          productList.innerHTML += `<li>${product}</li>`;
+        });
+      }
+      // 입력창에 입력하면
+      search.addEventListener("input", () => {
+        const keyword = search.value;
+        // console.log(keyword);
+        // 글자가 포함 된 상품만 찾기
+        const result = products.filter((product)=>{
+            // console.log(product);
+            return product.includes(keyword)
+            // 있는지 없는지 확인
+            
+        })
+        // 검색 결과 출력 함수
+        showProductList(result);
+      });
+      showProductList(products);
+    </script>
+  </body>
+</html>
