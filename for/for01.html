@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- for 반복문 : 같은 코드를 여러번 실행할때 사용하는 반복문 -->
+    <script>
+      // console.log("안녕하세요.");
+      // console.log("안녕하세요.");
+      // console.log("안녕하세요.");
+      // console.log("안녕하세요.");
+      // console.log("안녕하세요.");
+      // for( 시작 ; 조건 ; 증가){
+      //     // 실행코드
+      // }
+
+      for (let i = 0; i < 5; i++) {
+        console.log(i);
+      }
+      for (let i = 1; i <= 10; i++) {
+        // <= 이하의 개념
+        console.log(i);
+      }
+
+      //1부터 10까지 더한 값 출력
+
+      let sum = 0;
+      for (let i = 1; i <= 10; i++) {
+        sum += i; // 0 + i 반복될수록 1 + 2 + 3
+      }
+      document.write(sum);
+      // 안녕하세요 5번 출력
+      for (let i = 1; i <= 5; i++) {
+        document.write(`안녕하세요 ${i} 반가워요<br>`);
+      }
+      // 1 ~ 10중에 짝수만 출력
+      for (let i = 1; i <= 10; i++) {
+        console.log(i);
+        if (i % 2 === 0) {
+          document.write(`${i} 짝숭~`);
+        } 
+      }
+      for (let i = 1; i <= 10; i++) {
+        console.log(i);
+        if (i % 2 === 1) {
+          document.write(`${i} 홀숭~`);
+        } 
+      }
+      //별찍기
+      for(let i = 1; i <= 5; i++){
+        document.write(`${"⭐".repeat(i)}`)
+    }
+    document.write(`${"⭐".repeat(5)}`)
+    </script>
+  </body>
+</html>

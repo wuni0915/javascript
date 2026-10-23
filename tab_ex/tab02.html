@@ -14,6 +14,10 @@
       li {
         list-style: none;
       }
+
+      img {
+        /* width: 100%; */
+      }
       /* menu */
       .menu {
         width: 50%;
@@ -33,6 +37,31 @@
       .menu-item.active {
         background-color: rgb(255, 215, 164);
         cursor: pointer;
+      }
+      /* 탭 내용 */
+      .card-container {
+        width: 60%;
+        max-width: 700px;
+        margin: auto;
+      }
+      /* js출력 ul 부분 */
+      .card {
+        /* display: flex; */
+        display: none;
+        gap: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+      .card.active {
+        display: flex;
+      }
+      .card li {
+        flex: 1;
+      }
+
+      .card img {
+        width: 100%;
+        display: block;
       }
     </style>
   </head>
@@ -89,16 +118,54 @@
       cardContainer.innerHTML = menuData
         .map((item, index) => {
           return `
-               <ul class="card">
-        <li>
-            <img src="" alt="">
-            <h2>이름</h2>
-            <p>가격: 원</p>
-        </li>
-       </ul>
+               <ul class="card ${index === 0 ? "active" : ""}">
+                ${item.product
+                  .map((product) => {
+                    return `
+                  <li>
+                    <img src="${product.image}" alt="${product.name}">
+                    <h2>${product.name}</h2>
+                    <p>가격: ${product.price.toLocaleString()}원</p>
+                    </li>`;
+                  })
+                  .join("")}
+                </ul>
         `;
         })
         .join("");
+      const menuItems = document.querySelectorAll(".menu-item");
+      const cards = document.querySelectorAll(".card");
+
+      // console.log(menuItems, cards);
+      // 탭에 맞는 카드 보여주는 함수
+      function showCard(index) {
+        //  모든 탭의 active 제거
+        menuItems.forEach((item)=>{
+          // console.log(item);
+          item.classList.remove("active")
+          
+        })
+        // 모든 탭 내용의 active 제거
+        cards.forEach((card)=>{
+          console.log(card);
+          card.classList.remove("active");
+          
+        });
+        // 클릭한 탭과 같은 번호의 카드 활성화
+        menuItems[index].classList.add("active")
+        // 메뉴아이템즈의 인덱스번호
+        cards[index].classList.add("active")
+      }
+      // 탭 메뉴 클릭시
+      menuItems.forEach((item, index)=>{
+        // console.log(item, index);
+        item.addEventListener("click", ()=>{
+          showCard(index)
+          // 쇼카드가 실행이 될건데 메뉴아이템의 index를 받아간다.
+        })
+        
+      })
+      // 쿼리셀렉터얼이라 add이벤트리스트너가 안뜸 각각 꺼내서 써주어야 한다. >( forEach)
     </script>
   </body>
 </html>
