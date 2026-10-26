@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">로그인</button>
+    <p id="text">로그아웃 상태</p>
+    <script>
+        let btn =document.querySelector("#btn")
+        let text = document.querySelector("#text")
+        let btnBoolean = false;
+        btn.addEventListener("click", ()=>{
+            btnBoolean = !btnBoolean;
+            if(btnBoolean){
+                btn.textContent = "로그아웃"
+                text.textContent = "로그인 상태"
+                
+            }else {
+                btn.textContent = "로그인"
+                text.textContent = "로그아웃 상태"
+
+            }
+            console.log(btnBoolean);
+            
+        })
+    </script>
+</body>
+</html>
